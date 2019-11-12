@@ -1,0 +1,27 @@
+{% csrf_token %}  
+{% for tree in finalList %}
+<p> tree id {{tree.id}}</p>
+<p>preorder traversal {{tree.preOrder}}</p>
+<p>inorder traversal {{tree.inOrder}}</p>
+<p>postorder traversal {{tree.postOrder}}</p>
+<form  action ={% url "treeElementInsertion" %} method="post">
+    {% csrf_token %}
+    <input type="hidden" value={{tree.id}} name="treeId">
+    <input type="text"  name="values">
+    <input type="submit" value="Add Element">
+</form>
+<br>
+<form  action ={% url "deleteTreeView" %} method="post">
+    {% csrf_token %}
+    <input type="hidden" value={{tree.id}} name="treeId">
+    <input type="submit" value="Delete Tree">
+</form>
+<br></br><br></br>
+{% endfor %}
+<h2>Adding a Tree</h2>
+<form  action ={% url "treeMakingFirstInsertion" %} method="post">
+    {% csrf_token %}
+    <input type="text"  name="values">
+    <input type="submit" value="Add Tree">
+</form>
+<br></br><br>
