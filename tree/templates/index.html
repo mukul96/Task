@@ -1,4 +1,6 @@
 {% csrf_token %}  
+<h1>Binary search Tree implementation </h1>
+<h5>For adding elemnts add in comma separated form</h5>
 {% for tree in finalList %}
 <p> tree id {{tree.id}}</p>
 <p>preorder traversal {{tree.preOrder}}</p>
@@ -19,6 +21,7 @@
 <br></br><br></br>
 {% endfor %}
 <h2>Adding a Tree</h2>
+<h5>For adding elements in a new tree add minimum of three elements in comma separated form</h5>
 <form  action ={% url "treeMakingFirstInsertion" %} method="post">
     {% csrf_token %}
     <input type="text"  name="values">

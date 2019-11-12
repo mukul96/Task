@@ -1,9 +1,9 @@
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.http import QueryDict
 from tree.utility import Insertion,inOrderTraversal,postOrderTraversal,preOrderTraversal,childInsertion
 from tree.models import *
 from django.shortcuts import render,redirect,reverse
+
 import string
 # Create your views here.
 
